@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Dancing Script';
+	color: whitesmoke;
+}
+
+body {
+	background: url('relax.jpg'), rgb(92, 178, 92);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 2rem;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	width: 300px;
+	position: relative;
+	margin: auto;
+}
+
+.container.grow {
+	/* breathe in */
+	animation: grow 4s linear forwards;
+}
+
+.container.shrink {
+	/* breathe out */
+	animation: shrink 4s linear forwards;
+}
+
+.bigger-circle {
+	background: conic-gradient(
+		rgb(28, 66, 35) 0%,
+		rgb(28, 66, 35) 37%,
+		rgba(244, 255, 251, 1) 40%,
+		rgba(244, 255, 251, 1) 60%,
+		rgb(59, 127, 94) 63%,
+		rgba(59, 127, 94, 1) 95%,
+		rgb(28, 66, 35) 100%
+	);
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	height: 320px;
+	width: 320px;
+	border-radius: 50%;
+	z-index: -2;
+}
+
+.big-circle {
+	background-color: rgb(21, 24, 21);
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+#phase {
+	font-size: 2rem;
+}
+
+.pointer {
+	position: absolute;
+	top: -40px;
+	left: 140px;
+	width: 20px;
+	height: 190px; /* from center to circle */
+	animation: rotate 10s linear forwards infinite;
+	transform-origin: bottom center;
+}
+
+.pointer-circle {
+	background-color: whitesmoke;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	display: block;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes grow {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.2);
+	}
+}
+
+@keyframes shrink {
+	from {
+		transform: scale(1.2);
+	}
+	to {
+		transform: scale(1);
+	}
+}
